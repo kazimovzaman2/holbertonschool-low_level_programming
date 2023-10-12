@@ -1,7 +1,10 @@
 #include<stdio.h>
 
 /**
- * Print the comment using puts() function
+ * main - Entry point
+ *
+ * Description: 'print comment using puts()'
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
