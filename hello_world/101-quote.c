@@ -14,5 +14,5 @@ int main(void)
 		putchar(st[n]);
 		n++;
 	}
-	return (1);
+	return (0);
 }
