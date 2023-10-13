@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: 'print comment using puts()'
+ * Description: 'print comment using putchar()'
  * Return: Always 0 (Success)
  */
 int main(void)
