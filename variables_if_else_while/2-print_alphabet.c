@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - Entry point
  *
  * Description: 'putchar'
@@ -15,5 +15,5 @@ int main(void)
 		putchar(ch);
 	}
 	putchar('\n');
-	return(0);
+	return (1);
 }
