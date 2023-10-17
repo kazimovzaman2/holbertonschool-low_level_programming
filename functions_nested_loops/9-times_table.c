@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_last_digit - Entry point
+ * times_table - Entry point
  *
  * Return: Always 0 (Success)
  */
