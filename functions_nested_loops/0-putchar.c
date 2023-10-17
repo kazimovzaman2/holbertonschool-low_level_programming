@@ -1,13 +1,22 @@
-#include <stdio.h>
+#include "main.h"
+
 
 /**
  * main - Entry point
  *
- * Description: 'task 0'
+ * Description: '0'
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	printf("_putchar\n");
+	int i = 0;
+	char c[] = "_putchar";
+
+	while (c[i] != '\0')
+	{
+		_putchar(c[i]);
+		i++;
+	}
+	_putchar('\n');
 	return (0);
 }
