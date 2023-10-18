@@ -5,32 +5,23 @@
  *
  * Description: 'awdaw'
  * Return: Always 0 (Success)
- */
+*/
 int main(void)
 {
-	int n = 98;
-	unsigned long int num1 = '1';
-	unsigned long int num2 = 2;
-	unsigned long int next = num1 + num2;
+	unsigned long int a, b, s;
+	int c;
+	a = 1;
+	b = 2;
+	c = 3;
 
-	int count = 3;
-
-	printf("%lu, %lu, ", num1, num2);
-
-	while (count <= n)
+	printf("%lu, %lu", a, b);
+	while (c < 99)
 	{
-		if (count == 50)
-		{
-			printf("%lu", next);
-		}
-		else
-		{
-			printf("%lu, ", next);
-		}
-		count++;
-		num1 = num2;
-		num2 = next;
-		next = num1 + num2;
+		s = a + b;
+		a = b;
+		b = s;
+		c++;
+		printf(", %lu", s);
 	}
 	printf("\n");
 	return (0);
