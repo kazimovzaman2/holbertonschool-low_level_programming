@@ -10,7 +10,7 @@ int main(void)
 {
 	int n = 50;
 	long int num1 = 1;
-	long int num2 = 1;
+	long int num2 = 2;
 	long int next = num1 + num2;
 
 	int count = 3;
