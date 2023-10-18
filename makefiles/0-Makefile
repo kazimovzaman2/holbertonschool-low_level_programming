@@ -1,0 +1,4 @@
+#make file - this is a comment section
+
+all:
+	gcc main.c school.c -o school
