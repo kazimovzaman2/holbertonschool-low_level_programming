@@ -14,9 +14,9 @@ oclean:
 	rm -f $(OBJ)
 
 fclean:
-	rm -f $(RM) $(NAME)
-	rm -f $(OBJ)
+	make clean
+	make oclean
 
 re:
-	rm -f $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	make oclean
+	make all
