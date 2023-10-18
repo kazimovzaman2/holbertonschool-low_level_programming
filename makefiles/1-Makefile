@@ -1,0 +1,7 @@
+#make file - this is the commet
+
+CC=gcc
+SRC=main.c school.c
+
+all:
+	$(CC) $(SRC) -o school
