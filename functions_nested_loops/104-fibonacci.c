@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/types.h>
 
 /**
  * main - Entry point
@@ -8,7 +9,7 @@
 */
 int main(void)
 {
-	unsigned long int a, b, s;
+	int64_t a, b, s;
 	int c;
 	a = 1;
 	b = 2;
