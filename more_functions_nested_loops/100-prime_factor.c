@@ -17,7 +17,7 @@ int main(void)
 		if (n % i == 0)
 		{
 			n = n / i;
-			i = 2;
+			continue;
 		}
 		i++;
 	}
