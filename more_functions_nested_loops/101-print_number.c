@@ -2,8 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * print_number - Entry point
  *
+ * @n: 'var
  *
  * Return: Always 0 (Success)
  */
@@ -20,7 +21,7 @@ void print_number(int n)
 	{
 		i = i * 10;
 	}
-	for (; i != 1; i/=10)
+	for (; i != 1; i /= 10)
 	{
 		_putchar((n / i) + '0');
 		n = n % i;
