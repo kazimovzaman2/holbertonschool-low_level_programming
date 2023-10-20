@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * fizz_buzz - Entry point
+ * main - Entry point
  *
  *
  * Return: Always 0 (Success)
