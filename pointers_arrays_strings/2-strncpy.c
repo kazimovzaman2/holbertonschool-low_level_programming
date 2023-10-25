@@ -20,6 +20,7 @@ char *_strncpy(char *dest, char *src, int n)
 		if (i < size)
 		{
 			dest[i] = src[i];
+			i++;
 		}
 		else
 		{
