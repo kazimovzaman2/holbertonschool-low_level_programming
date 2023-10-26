@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * reset_to_98 - Entry point
+ * _memset - Entry point
  *
  * @n: 'varaibles'
  * @s: 'varaibles'
