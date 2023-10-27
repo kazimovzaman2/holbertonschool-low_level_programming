@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+#include <stdio.h>
 
 /**
  * print_diagsums - check the code
@@ -14,19 +14,16 @@ void print_diagsums(int *a, int size)
 	int i;
 	int fd = 0;
 	int sd = 0;
-
+	
 	for (i = 0; i < size; i++)
 	{
 		fd = fd + a[i * size + i];
 	}
+
 	for (i = 0; i < size; i++)
 	{
 		sd = sd + a[i * size + (size - 1 - i)];
 	}
-
-	_putchar(fd);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(sd);
-	_putchar('\n');
+	
+	printf("%d, %d\n");
 }
