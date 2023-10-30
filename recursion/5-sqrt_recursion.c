@@ -5,7 +5,7 @@
 int sqrt_2(int n, int k)
 {
 	if (n == k)
-		return (-1);
+		return (1);
 	if (n * n == k)
 		return (n);
 	return (sqrt_2(n + 1, k));
