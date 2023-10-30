@@ -6,7 +6,6 @@
  * @s: var
  * Return: Always 0.
  */
-int i = 0;
 int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
