@@ -1,7 +1,14 @@
 #include "main.h"
 
 
-
+/**
+ * sqrt_2 - check the code
+ *
+ * @n: var
+ * @k: var
+ *
+ * Return: Always 0.
+ */
 int sqrt_2(int n, int k)
 {
 	if (n == k)
