@@ -13,6 +13,7 @@
 int check_prime(int n, int l)
 {
 	int result = 0;
+
 	if (n < 2)
 		return (0);
 	if (n == 2 || n == 3)
