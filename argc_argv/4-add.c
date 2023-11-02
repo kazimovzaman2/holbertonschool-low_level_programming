@@ -4,6 +4,34 @@
 #include <string.h>
 #include <ctype.h>
 
+
+/**
+ * check_num - check the code
+ *
+ * @s: var
+ *
+ * Return: Always 0.
+ */
+int check_num(char *s)
+{
+	unsigned int count;
+
+	count = 0;
+	while (count < strlen(s))
+
+	{
+		if (!isdigit(s[count]))
+		{
+			return (0);
+		}
+
+		count++;
+	}
+	return (1);
+}
+
+
+
 /**
  * main - check the code
  *
@@ -18,7 +46,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i <= argc - 1; i++)
 	{
-		if (isdigit(*argv[i]))
+		if (check_num(argv[i]))
 		{
 			result = result + atoi(argv[i]);
 		}
