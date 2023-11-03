@@ -35,11 +35,11 @@ int main(int argc, char *argv[])
 		else if (num >= 10)
 			num = num - 10;
 		else if (num >= 5)
-                        num = num - 5;
+			num = num - 5;
 		else if (num >= 2)
-                        num = num - 2;
+			num = num - 2;
 		else if (num >= 1)
-                        num = num - 1;
+			num = num - 1;
 
 		count = count + 1;
 	}
