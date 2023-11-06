@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * str_concat - check the code
@@ -26,6 +27,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		c[i] = s2[i - size1];
 	}
-
 	return (c);
 }
