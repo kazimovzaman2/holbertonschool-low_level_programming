@@ -7,7 +7,7 @@
  * @d: var
  * @name: var
  * @age: var
- * @owne: var
+ * @owner: var
  *
  * Return: Always 0.
  */
