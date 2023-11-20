@@ -2,7 +2,7 @@
 #include "dog.h"
 
 /**
- * main - check the code
+ * init_dog - check the code
  *
  * @d: var
  * @name: var
