@@ -4,14 +4,15 @@
 #include "3-calc.h"
 
 /**
- * struct op - Struct op
+ * main - Struct op
  *
- * @op: The operator
- * @f: The function associated
+ * @argc: The operator
+ * @argv: The function associated
+ *
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result = 0;
+	int num1, num2, result;
 	char *op;
 
 	if (argc != 4)
@@ -25,7 +26,10 @@ int main(int argc, char *argv[])
 	op = argv[2];
 
 	if (strcmp(op, "'*'") == 0)
+	{
+		printf("true\n");
 		op = "*";
+	}
 	else if (strcmp(op, "'%'") == 0)
 		op = "%";
 
