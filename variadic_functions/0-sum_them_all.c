@@ -5,6 +5,8 @@
 /**
  * sum_them_all - check the code
  *
+ * @n: var
+ *
  * Return: Always 0.
  */
 int sum_them_all(const unsigned int n, ...)
