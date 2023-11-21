@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
 			break;
 		default:
 			printf("Error\n");
+			exit(99);
 	}
 
-	return (99);
+	return (0);
 }
