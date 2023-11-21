@@ -47,7 +47,7 @@ int op_div(int a, int b) { return (a / b); }
 
 
 /**
- * op_div - prints an integer
+ * op_mod - prints an integer
  *
  * @a: the integer to print
  * @b: var

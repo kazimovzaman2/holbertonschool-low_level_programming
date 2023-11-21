@@ -9,6 +9,7 @@
  * @argc: The operator
  * @argv: The function associated
  *
+ * Return: var
  */
 int main(int argc, char *argv[])
 {
