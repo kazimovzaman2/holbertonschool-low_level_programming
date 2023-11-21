@@ -22,6 +22,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i == n - 1)
 			printf("%d\n", va_arg(ptr, int));
 		else
+		{
+			if (!seperator)
+			printf("%d", va_arg(ptr, int));
+		}
 			printf("%d%s", va_arg(ptr, int), separator);
 	}
 
