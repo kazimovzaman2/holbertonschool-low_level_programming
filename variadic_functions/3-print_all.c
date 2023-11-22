@@ -23,8 +23,11 @@ void print_all(const char * const format, ...)
 	{
 	while (format[i])
 	{
-		if (i > 0)
+		while (i > 0)
+		{
 			printf(", ");
+			break;
+		}
 
 		switch (format[i])
 		{
