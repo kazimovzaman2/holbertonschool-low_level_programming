@@ -1,5 +1,5 @@
 section .data
-    msg db "Hello world",10      ; 10 is the ASCII code for a new line (LF)
+    msg db "Hello, world",10      ; 10 is the ASCII code for a new line (LF)
 
 global main
 
