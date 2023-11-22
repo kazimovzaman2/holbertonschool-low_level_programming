@@ -19,17 +19,9 @@ void print_all(const char * const format, ...)
 
 	va_start(ptr, format);
 
-	if (format)
+	while (format[i] && format)
 	{
-	while (format[i])
-	{
-		while (i > 0)
-		{
-			printf(", ");
-			break;
-		}
-
-		switch (format[i])
+		switch (format[i++])
 		{
 			case 'c':
 				printf("%c", va_arg(ptr, int));
@@ -47,11 +39,13 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 				break;
 			default:
-				break;
+				continue;
 		}
 
-		i++;
+		if (format[i])
+			printf(", ");
 	}
-	}
+
+	va_end(ptr);
 	printf("\n");
 }
