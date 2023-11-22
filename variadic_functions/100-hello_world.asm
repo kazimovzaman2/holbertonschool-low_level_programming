@@ -1,26 +1,15 @@
-; 100-hello_world.asm
-;
-; Author: Zaman Kazimov
-; Date: 22-11-2023
-
-
-global _start
-
-section .text:
-
+section .data
+    hello db 'Hello, World', 0xa  ; String to be printed, 0xa is the newline character
+section .text
+    global _start
 _start:
-    mov eax, 0x4                ; use the write syscall
-    mov ebx, 1                  ; use stdout as the fd
-    mov ecx, message            ; use the message as the buffer
-    mov edx, message_length     ; and supply the length
-    int 0x80                    ; invoke the syscall
-
-    ; now gracefully exit
-
-    mov eax, 0x1
-    mov ebx, 0
-    int 0x80
-
-section .data:
-    message: db "Hello World", 0xA
-    message_length equ $-message
+    ; Write the string to the standard output
+    mov rax, 1         ; System call number for sys_write
+    mov rdi, 1         ; File descriptor 1 is stdout
+    mov rsi, hello     ; Pointer to the string
+    mov rdx, 13        ; Length of the string
+    syscall
+    ; Exit the program
+    mov rax, 60        ; System call number for sys_exit
+    xor rdi, rdi       ; Exit code 0
+    syscall
