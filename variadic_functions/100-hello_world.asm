@@ -1,22 +1,27 @@
 section .text
-    default rel
-    extern printf
-    global main
-main:
-    ; Create a stack-frame, re-aligning the stack to 16-byte alignment before calls
-    push rbp
+; Export the entry point to the ELF linker or loader.  The conventional
+; entry point is "_start". Use "ld -e foo" to override the default.
+    global _start
 
-    mov	rdi, fmt
-    mov	rsi, message
-    mov	rax, 0
-
-    ; Call printf
-    call printf wrt ..plt
-    
-    pop	rbp		; Pop stack
-
-    mov	rax,0	; Exit code 0
-    ret			; Return
 section .data
-    message:  db        "Hello, World", 10, 0
-    fmt:    db "%s", 10, 0
+msg db  'Hello, world!',0xa ;our dear string
+len equ $ - msg         ;length of our dear string
+
+section .text
+
+; linker puts the entry point here:
+_start:
+
+; Write the string to stdout:
+
+    mov edx,len ;message length
+    mov ecx,msg ;message to write
+    mov ebx,1   ;file descriptor (stdout)
+    mov eax,4   ;system call number (sys_write)
+    int 0x80    ;call kernel
+
+; Exit via the kernel:
+
+    mov ebx,0   ;process' exit code
+    mov eax,1   ;system call number (sys_exit)
+    int 0x80    ;call kernel - this interrupt won't return
