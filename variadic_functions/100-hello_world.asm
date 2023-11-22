@@ -1,27 +1,26 @@
-section .text
-; Export the entry point to the ELF linker or loader.  The conventional
-; entry point is "_start". Use "ld -e foo" to override the default.
-    global _start
+; 100-hello_world.asm
+;
+; Author: Zaman Kazimov
+; Date: 22-11-2023
 
-section .data
-msg db  'Hello, world!',0xa ;our dear string
-len equ $ - msg         ;length of our dear string
 
-section .text
+global _start
 
-; linker puts the entry point here:
+section .text:
+
 _start:
+    mov eax, 0x4                ; use the write syscall
+    mov ebx, 1                  ; use stdout as the fd
+    mov ecx, message            ; use the message as the buffer
+    mov edx, message_length     ; and supply the length
+    int 0x80                    ; invoke the syscall
 
-; Write the string to stdout:
+    ; now gracefully exit
 
-    mov edx,len ;message length
-    mov ecx,msg ;message to write
-    mov ebx,1   ;file descriptor (stdout)
-    mov eax,4   ;system call number (sys_write)
-    int 0x80    ;call kernel
+    mov eax, 0x1
+    mov ebx, 0
+    int 0x80
 
-; Exit via the kernel:
-
-    mov ebx,0   ;process' exit code
-    mov eax,1   ;system call number (sys_exit)
-    int 0x80    ;call kernel - this interrupt won't return
+section .data:
+    message: db "Hello World", 0xA
+    message_length equ $-message
