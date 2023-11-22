@@ -20,6 +20,7 @@ void print_all(const char * const format, ...)
 	va_start(ptr, format);
 
 	if (!format)
+		printf("\n");
 		return;
 	while (format[i])
 	{
