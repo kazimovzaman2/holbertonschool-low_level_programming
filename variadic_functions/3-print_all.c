@@ -27,7 +27,7 @@ void print_all(const char * const format, ...)
 				printf("%c", va_arg(ptr, int));
 				break;
 			case 'i':
-			       	printf("%d", va_arg(ptr, int));
+				printf("%d", va_arg(ptr, int));
 				break;
 			case 'f':
 				printf("%f", va_arg(ptr, double));
@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if (format[i+1] && (format[i] == 'c' || format[i] == 'i'
+		if (format[i + 1] && (format[i] == 'c' || format[i] == 'i'
 					|| format[i] == 'f' || format[i] == 's'))
 			printf(", ");
 		i++;
