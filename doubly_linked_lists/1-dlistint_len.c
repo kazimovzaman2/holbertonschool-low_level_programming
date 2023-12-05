@@ -5,7 +5,7 @@
 
 
 /**
- * print_list - check the code
+ * dlistint_len - check the code
  *
  * @h: var
  *
