@@ -4,7 +4,9 @@
 #include "lists.h"
 
 /**
- * main - check the code
+ * sum_dlistint - check the code
+ *
+ * @head: var
  *
  * Return: Always EXIT_SUCCESS.
  */
