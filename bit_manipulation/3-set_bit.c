@@ -14,7 +14,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned long int num = *n, num_to_add = 1;
 	unsigned int size_ulong = sizeof(num) * 8, i = 0;
 
-	if (index < sizeulong)
+	if (index < size_ulong)
 	{
 		if (((num >> index) & 1) == 0)
 		{
