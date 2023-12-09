@@ -11,12 +11,23 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int clearBit = ~(1<<index);
-	int mask = *n & clearBit;
+	unsigned long int num = *n, num_to_add = 1;
+	unsigned int size_ulong = sizeof(num) * 8, i = 0;
 
-	if (index >= sizeof(unsigned long int) * 8)
+	if (index < sizeulong)
+	{
+		if (((num >> index) & 1) == 0)
+		{
+			while (i != index)
+			{
+				num_to_add *= 2;
+				i++;
+			}
+			num = num + num_to_add;
+			*n = num;
+		}
+		return (1);
+	}
+	else
 		return (-1);
-
-	*n = mask |(1<<index);
-	return (*n);
 }
