@@ -5,7 +5,10 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * read_textfile - check the code
+ *
+ * @filename: var
+ * @letters: var
  *
  * Return: Always 0.
  */
