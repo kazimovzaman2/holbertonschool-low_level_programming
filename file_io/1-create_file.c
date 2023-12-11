@@ -14,7 +14,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int number_of_letters = sizeof(text_content);
+	int number_of_letters;
 	int new_file;
 
 	if (!filename)
@@ -25,6 +25,9 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (!text_content)
 		text_content = "";
+
+	while (text_content[number_of_letters] != '\0')
+		number_of_letters++;
 
 	write(new_file, text_content, number_of_letters);
 
