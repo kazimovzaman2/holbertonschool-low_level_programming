@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 		{
 			close(file);
 			close(new_file);
-			dprintf(STDERR_FILENO, "Error: Can't read to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
 			exit(98);
 		}
 	}
