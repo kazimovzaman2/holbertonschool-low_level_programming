@@ -7,6 +7,104 @@
 
 
 /**
+ * open_src_file - open source file
+ *
+ * @filename: var
+ *
+ * Return: Always 0.
+ */
+int open_src_file(const char *filename)
+{
+	int file = open(filename, O_RDONLY);
+
+	if (file == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from source file\n");
+		exit(98);
+	}
+	return (file);
+}
+
+
+/**
+ * create_dest_file - create or open dest file
+ *
+ * @filename: var
+ *
+ * Return: Always 0.
+ */
+int create_dest_file(const char *filename)
+{
+	int new_file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
+	if (new_file == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to destination file\n");
+		exit(99);
+	}
+	return (new_file);
+}
+
+
+/**
+ * copy_file - copy file content and write to dest
+ *
+ * @src_file: var
+ * @dest_file: var
+ *
+ * Return: Always 0.
+ */
+void copy_file(int src_file, int dest_file)
+{
+	char text[1024];
+	int bytesR, wr;
+
+	while (1)
+	{
+		bytesR = read(src_file, text, sizeof(text));
+		if (bytesR > 0)
+		{
+			wr = write(dest_file, text, bytesR);
+			if (wr == -1)
+			{
+				close(src_file);
+				close(dest_file);
+				dprintf(STDERR_FILENO, "Error: Can't write to destination file\n");
+				exit(99);
+			}
+		}
+		else if (bytesR == 0)
+			break;
+		else
+		{
+			close(src_file);
+			close(dest_file);
+			dprintf(STDERR_FILENO, "Error: Can't read from source file\n");
+			exit(98);
+		}
+	}
+}
+
+
+/**
+ * close_file - close the file
+ *
+ * @src_file: var
+ * @dest_file: var
+ *
+ * Return: Always 0.
+ */
+void close_files(int src_file, int dest_file)
+{
+	if (close(src_file) == -1 || close(dest_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file descriptors\n");
+		exit(100);
+	}
+}
+
+
+/**
  * main - check the code
  *
  * @argc: var
@@ -16,8 +114,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file, new_file, bytesR, wr;
-	char text[1024];
+	int src_file, dest_file;
 
 	/* Check the argument count */
 	if (argc != 3)
@@ -26,58 +123,17 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	/* Open file */
-	file = open(argv[1], O_RDONLY);
-	if (file == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	/* Create new file */
-	new_file = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (new_file == -1)
-	{
-		close(file);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-
+	/* Open and create file */
+	src_file = open_src_file(argv[1]);
+	dest_file = create_dest_file(argv[2]);
 
 	/* Main copying */
-	while (1)
-	{
-		bytesR = read(file, text, sizeof(text));
-		if (bytesR > 0)
-		{
-			wr = write(new_file, text, bytesR);
-			if (wr == -1)
-			{
-				close(file);
-				close(new_file);
-				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-				exit(99);
-			}
-		}
-		else if (bytesR == 0)
-			break;
-		else
-		{
-			close(file);
-			close(new_file);
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-	}
+	copy_file(src_file, dest_file);
 
 
 
 	/* Check close if there are some problem print error */
-	if (close(file) == -1 || close(new_file) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (close(file) == -1) ? file : new_file);
-		exit(100);
-	}
+	close_files(src_file, dest_file);
 
 	return (0);
 }
