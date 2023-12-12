@@ -91,7 +91,7 @@ void copy_file(int src_file, int dest_file, char *src_f, char *dest_f)
 
 
 /**
- * close_file - close the file
+ * close_files - close the files
  *
  * @src_file: var
  * @dest_file: var
