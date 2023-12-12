@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -22,7 +23,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		text_content = "";
 
 	file = open(filename, O_WRONLY | O_APPEND);
-	wr = write(file, text_content, strlen(text_content));
+	write(file, text_content, strlen(text_content));
 
 	return (1);
 }
