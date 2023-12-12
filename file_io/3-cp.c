@@ -102,12 +102,12 @@ void close_files(int src_file, int dest_file)
 {
 	if (close(src_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_file;
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_file);
 		exit(100);
 	}
 	else if (close(dest_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_file;
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_file);
 		exit(100);
 	}
 }
