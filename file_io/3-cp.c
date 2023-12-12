@@ -13,8 +13,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int file, new_file;
-	char *text;
+	int file, new_file, bytesR, bytesW;
+	char text[1024];
 
 	// Check the argument count
 	if (argc != 3)
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	file = open(argv[1], O_RDONLY);
 	if (file == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(98);
 	}
 
@@ -36,16 +36,31 @@ int main(int argc, char *argv[])
 	if (new_file == -1)
 	{
 		close(file);
-		printf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE %s\n", new_file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", new_file);
 		exit(99);
 	}
 
 
+	// Main copying
+	while (1)
+	{
+		bytesR = read(file, text, sizeof(text));
+		if (bytesR > 0)
+			bytesW = write(new_file, text, bytesR);
+		else if (bytesR == 0)
+			break;
+		else
+		{
+			close(file);
+			close(new_file);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", new_file);
+			exit(99);
+		}
+	}
 
 
 
-
-
+	// Check close if there are some problem print error
 	if (close(file) == -1 || close(new_file) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (close(file) == -1) ? file : new_file);
