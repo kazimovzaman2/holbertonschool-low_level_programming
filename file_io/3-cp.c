@@ -16,7 +16,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file, new_file, bytesR;
+	int file, new_file, bytesR, wr;
 	char text[1024];
 
 	/* Check the argument count */
@@ -49,7 +49,16 @@ int main(int argc, char *argv[])
 	{
 		bytesR = read(file, text, sizeof(text));
 		if (bytesR > 0)
-			write(new_file, text, bytesR);
+		{
+			wr = write(new_file, text, bytesR);
+			if (wr == -1)
+			{
+				close(file);
+				close(new_file);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+				exit(99);
+			}
+		}
 		else if (bytesR == 0)
 			break;
 		else
