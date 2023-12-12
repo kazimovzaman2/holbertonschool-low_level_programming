@@ -51,6 +51,8 @@ int create_dest_file(const char *filename)
  *
  * @src_file: var
  * @dest_file: var
+ * @src_f: name of source file
+ * @dest_f: name of destination file
  *
  * Return: Always 0.
  */
@@ -74,7 +76,9 @@ void copy_file(int src_file, int dest_file, char *src_f, char *dest_f)
 			}
 		}
 		else if (bytesR == 0)
+		{
 			break;
+		}
 		else
 		{
 			close(src_file);
@@ -96,9 +100,14 @@ void copy_file(int src_file, int dest_file, char *src_f, char *dest_f)
  */
 void close_files(int src_file, int dest_file)
 {
-	if (close(src_file) == -1 || close(dest_file) == -1)
+	if (close(src_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (close(src_file) == -1) ? src_file : dest_file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_file;
+		exit(100);
+	}
+	else if (close(dest_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_file;
 		exit(100);
 	}
 }
