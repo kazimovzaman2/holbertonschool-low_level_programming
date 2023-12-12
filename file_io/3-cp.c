@@ -19,7 +19,7 @@ int open_src_file(const char *filename)
 
 	if (file == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from source file\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	return (file);
@@ -39,7 +39,7 @@ int create_dest_file(const char *filename)
 
 	if (new_file == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to destination file\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 	return (new_file);
@@ -54,7 +54,7 @@ int create_dest_file(const char *filename)
  *
  * Return: Always 0.
  */
-void copy_file(int src_file, int dest_file)
+void copy_file(int src_file, int dest_file, char *src_f, char *dest_f)
 {
 	char text[1024];
 	int bytesR, wr;
@@ -69,7 +69,7 @@ void copy_file(int src_file, int dest_file)
 			{
 				close(src_file);
 				close(dest_file);
-				dprintf(STDERR_FILENO, "Error: Can't write to destination file\n");
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_f);
 				exit(99);
 			}
 		}
@@ -79,7 +79,7 @@ void copy_file(int src_file, int dest_file)
 		{
 			close(src_file);
 			close(dest_file);
-			dprintf(STDERR_FILENO, "Error: Can't read from source file\n");
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_f);
 			exit(98);
 		}
 	}
@@ -98,7 +98,7 @@ void close_files(int src_file, int dest_file)
 {
 	if (close(src_file) == -1 || close(dest_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file descriptors\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (close(src_file) == -1) ? src_file : dest_file);
 		exit(100);
 	}
 }
@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
 	dest_file = create_dest_file(argv[2]);
 
 	/* Main copying */
-	copy_file(src_file, dest_file);
+	copy_file(src_file, dest_file, argv[1], argv[2]);
 
 
 
