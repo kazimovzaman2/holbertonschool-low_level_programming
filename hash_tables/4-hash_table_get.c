@@ -4,13 +4,13 @@
 #include "hash_tables.h"
 
 
-/*
- * hash_table_get - function
+/**
+ * hash_table_get - check the code for
  *
  * @ht: var
  * @key: var
  *
- * Return: Always
+ * Return: Always EXIT_SUCCESS.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
