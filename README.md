@@ -12,24 +12,16 @@ This repository contains projects and assignments completed during the Low-Level
   - [functions_nested_loops](functions_nested_loops/) - Writing nested loops and functions in C.
   - [more_functions_nested_loops](more_functions_nested_loops/) - Further practice with functions and nested loops.
   - [pointers_arrays_strings](pointers_arrays_strings/) - Manipulation of pointers, arrays, and strings in C.
- 
-
-  1. [makefiles](makefiles/) - Understanding and creating Makefiles for C projects.
-  
-  4. [hash_tables](hash_tables/) - Implementation and usage of hash tables.
-
-  6. [file_io](file_io/) - Working with file I/O operations in C.
-  7. [recursion](recursion/) - Implementation of recursive functions in C.
-  8. [argc_argv](argc_argv/) - Description of the argc and argv arguments in C programs.
-  9. [preprocessor](preprocessor/) - Understanding and using the C preprocessor.
-  10. [bit_manipulation](bit_manipulation/) - Manipulating bits in C.
-  11. [doubly_linked_lists](doubly_linked_lists/) - Implementation and manipulation of doubly linked lists.
-  12. [function_pointers](function_pointers/) - Understanding and using function pointers in C.
-  13. 
-  14. [static_libraries](static_libraries/) - Creation and usage of static libraries.
-  15. [more_malloc_free](more_malloc_free/) - Additional exercises on dynamic memory allocation.
-  16. [variadic_functions](variadic_functions/) - Implementation of variadic functions in C.
-  17. [structures_typedef](structures_typedef/) - Declaration and use of structures and typedef in C.
-  18. 
-  19. [malloc_free](malloc_free/) - Dynamic memory allocation and deallocation in C.
-  20. [variadic_functions](variadic_functions/) - Implementation of variadic functions in C.
+  - [recursion](recursion/) - Practice with recursion in C.
+  - [static_libraries](static_libraries/) - Creating and using static libraries in C.
+  - [argc_argv](argc_argv/) - Practice with command line arguments in C.
+  - [malloc_free](malloc_free/) - Practice with dynamic memory allocation in C.
+  - [more_malloc_free](more_malloc_free/) - Further practice with dynamic memory allocation.
+  - [preprocessor](preprocessor/) - Practice with the C preprocessor.
+  - [structures_typedef](structures_typedef/) - Practice with structures and the `typedef` keyword in C.
+  - [function_pointers](function_pointers/) - Practice with function pointers in C.
+  - [variadic_functions](variadic_functions/) - Practice with variadic functions in C.
+  - [singly_linked_lists](singly_linked_lists/) - Practice with singly linked lists in C.
+  - [bit_manipulation](bit_manipulation/) - Practice with bit manipulation in C.
+  - [file_io](file_io/) - Practice with file input/output in C.
+  - [doubly_linked_lists](doubly_linked_lists/) - Practice with doubly linked lists in C.
