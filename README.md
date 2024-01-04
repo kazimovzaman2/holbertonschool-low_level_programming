@@ -1,4 +1,5 @@
-# Holberton School - Low-Level Programming (Data Structures, Algorithms, Linux/Unix System Programming)
+# Holberton School - Low-Level Programming
+### Data Structures, Algorithms, Linux/Unix System Programming
 
 This repository contains projects and assignments completed during the Low-Level Programming track at Holberton School. The track covers a variety of topics including data structures, algorithms, and Linux/Unix system programming.
 
