@@ -1,1 +1,3 @@
-0.
+# C: More Malloc Free
+
+This folder contains C programs that further explore dynamic memory allocation and deallocation using `malloc` and `free` functions in C programming. Dynamic memory allocation allows programs to allocate memory at runtime, enabling flexible memory management and efficient resource utilization. The programs illustrate advanced usage of `malloc` and `free`, including dynamic allocation of multi-dimensional arrays, linked lists, and other complex data structures. They also cover best practices for error handling, memory leak detection, and memory usage optimization in C programs.
