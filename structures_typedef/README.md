@@ -1,1 +1,3 @@
-0.
+# C: Structures, typedef
+
+This folder contains C programs that focus on structures and typedefs in C programming. Structures allow you to group variables of different data types under a single name, facilitating the organization and manipulation of complex data. Typedefs provide a way to create aliases or alternate names for existing data types, improving code readability and maintainability. The programs in this folder demonstrate how to define and use structures, as well as how to create and utilize typedefs in C programs. They showcase practical examples of struct usage, including defining custom data types, creating linked lists, and implementing data structures and algorithms.
