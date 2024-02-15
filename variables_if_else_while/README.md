@@ -1,1 +1,3 @@
-0.
+# C: Varaibles, if, else, while
+
+This folder contains C programs that demonstrate the usage of variables, if-else statements, and while loops in C programming. Variables are used to store and manipulate data, while if-else statements allow for conditional execution of code blocks based on certain conditions. While loops provide a way to repeatedly execute a block of code as long as a specified condition is true. The programs in this folder cover various scenarios where variables, if-else statements, and while loops are utilized to solve problems and implement algorithms. They showcase fundamental programming concepts and techniques in C programming.
