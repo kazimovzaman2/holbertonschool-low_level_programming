@@ -1,1 +1,3 @@
-# searching algos
+# C: Search Algorithms
+
+This folder contains C programs that implement various search algorithms. Search algorithms are used to locate a target value within a collection of data. The programs in this folder cover popular search algorithms such as linear search, binary search, and depth-first search (DFS). They demonstrate how these algorithms work and how they can be applied to different types of data structures, including arrays, linked lists, and trees. Additionally, the programs may include optimizations and variations of these search algorithms to improve performance or handle specific use cases.
