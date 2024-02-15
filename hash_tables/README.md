@@ -1,1 +1,3 @@
-0.
+# C: Hash Tables
+
+This folder contains C programs that implement hash tables, a data structure used for efficient data storage and retrieval. Hash tables use a hashing function to map keys to indices in an array, allowing for constant-time insertion, deletion, and lookup operations in many cases. The programs demonstrate how to implement basic hash table functionalities such as insertion, deletion, and search, as well as handling collision resolution techniques such as chaining or open addressing. They also showcase practical applications of hash tables in solving real-world problems efficiently.
