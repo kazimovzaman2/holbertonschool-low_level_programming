@@ -1,5 +1,3 @@
-0. Object Like Macro
-1. Pi
-2. Main macro
-3. Function like macro
-4. Sum of macro
+# C: Preprocessor
+
+This folder contains C programs that illustrate the usage of the C preprocessor. The C preprocessor is a tool that processes the source code before it is compiled, performing tasks such as macro substitution, file inclusion, and conditional compilation. The programs demonstrate how to use preprocessor directives such as `#define`, `#include`, `#ifdef`, `#ifndef`, `#if`, and `#endif` to manipulate the source code during preprocessing. They showcase practical examples of macro definitions, header file inclusion, and conditional compilation to enhance code readability, modularity, and portability in C programming.
