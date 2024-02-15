@@ -1,1 +1,3 @@
-0. 
+# C: Pointers, arrays, and strings
+
+This folder contains C programs that focus on pointers, arrays, and strings in C programming. Pointers are variables that store memory addresses, allowing for direct manipulation of memory and efficient data access. Arrays are collections of elements of the same data type stored in contiguous memory locations. Strings are sequences of characters stored as arrays of characters terminated by a null character ('\0'). The programs demonstrate various operations and manipulations involving pointers, arrays, and strings, including pointer arithmetic, array traversal, string manipulation, and memory allocation. They also cover common pitfalls and best practices for working with pointers, arrays, and strings in C programming.
