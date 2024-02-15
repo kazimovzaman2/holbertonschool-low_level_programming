@@ -1,1 +1,3 @@
-0.
+# C: Static Libraries
+
+This folder contains C programs that demonstrate the creation and usage of static libraries in C programming. Static libraries, also known as archive libraries, are collections of precompiled object files bundled together into a single library file. The programs in this folder illustrate how to create static libraries using the `ar` command, how to include them in C programs using the `gcc` compiler, and how to link them statically during the compilation process. They showcase the advantages of using static libraries for code reuse, distribution, and modularization in C projects.
