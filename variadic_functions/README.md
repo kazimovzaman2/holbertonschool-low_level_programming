@@ -1,1 +1,3 @@
-0.
+# C: Variadic Functions
+
+This folder contains C programs that explore variadic functions in C programming. Variadic functions are functions that accept a variable number of arguments, allowing for flexibility in function parameter lists. The programs in this folder demonstrate how to define and use variadic functions using the 1stdarg.h1 header and the `va_list`, `va_start`, `va_arg`, and `va_end` macros. They showcase practical examples of variadic functions, including printf-like functions, sum functions, and functions with variable argument lists. The programs illustrate how variadic functions can be used to handle different numbers and types of arguments dynamically at runtime.
